@@ -4,12 +4,12 @@ import Sidebar from "../components/Sidebar";
 import useSidebar from "../hooks/Sidebar";
 
 const Home = () => {
-  const { isOpen } = useSidebar();
+  const { isOpen, setIsOpen } = useSidebar();
 
   return (
     <>
-      <Navbar />
-      <Sidebar />
+      <Navbar setIsSidebarOpen={setIsOpen} />
+      <Sidebar isSidebarOpen={isOpen} />
 
       {/* Content */}
       <main className="px-4 md:px-5 mt-[60px]">
