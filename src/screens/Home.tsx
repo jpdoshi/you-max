@@ -13,7 +13,9 @@ const Home = () => {
 
       {/* Content */}
       <main className="px-4 md:px-5 mt-[60px]">
-        <div className={`${isOpen ? "ml-[200px]" : "ml-[80px]"} py-6`}>
+        <div
+          className={`${isOpen ? "ml-[200px]" : "ml-[80px]"} py-6 duration-300`}
+        >
           <h1 className="text-2xl font-bold">Home Works!</h1>
         </div>
       </main>
