@@ -233,7 +233,7 @@ const Sidebar = ({ isSidebarOpen }: Props) => {
     isSidebarOpen && (
       <aside
         className={`fixed top-[60px] left-0 h-[calc(100vh-60px)] border-r border-neutral-900 bg-[rgba(0,0,0,0.1)] backdrop-blur-md px-3 overflow-x-hidden overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-neutral-700 [&::-webkit-scrollbar-thumb]:rounded-full ${
-          isSidebarOpen ? "w-[200px]" : "w-[80px]"
+          isSidebarOpen ? "w-[240px]" : "w-0"
         }`}
       >
         <UserActions />
