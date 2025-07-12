@@ -9,12 +9,12 @@ interface Props {
 
 const Navbar = ({ setIsSidebarOpen }: Props) => {
   return (
-    <nav className="fixed top-0 left-0 h-[60px] w-full px-4 md:px-5 bg-[rgba(0,0,0,0.1)] backdrop-blur-md border-b border-neutral-900 z-50">
+    <nav className="fixed top-0 left-0 h-[60px] w-full px-4 md:px-5 bg-[rgba(0,0,0,0.1)] backdrop-blur-md border-b border-neutral-800 z-50">
       <div className="h-[60px] flex flex-row justify-between items-center">
         {/* Left Div */}
         <div className="flex flex-row gap-4 items-center">
           <button
-            className="rounded-full p-2 hover:bg-neutral-900 duration-300 cursor-pointer"
+            className="rounded-full p-2 hover:bg-neutral-800 duration-300 cursor-pointer"
             onClick={() => setIsSidebarOpen((prevState: any) => !prevState)}
           >
             <svg
@@ -60,7 +60,7 @@ const Navbar = ({ setIsSidebarOpen }: Props) => {
 
         {/* Right Div */}
         <div className="flex flex-row gap-1 items-center">
-          <button className="p-2 hover:bg-neutral-900 rounded-full duration-300 cursor-pointer">
+          <button className="p-2 hover:bg-neutral-800 rounded-full duration-300 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -76,7 +76,7 @@ const Navbar = ({ setIsSidebarOpen }: Props) => {
               />
             </svg>
           </button>
-          <button className="p-2 hover:bg-neutral-900 rounded-full duration-300 cursor-pointer">
+          <button className="p-2 hover:bg-neutral-800 rounded-full duration-300 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
