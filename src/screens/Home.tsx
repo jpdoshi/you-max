@@ -8,7 +8,7 @@ const Home = () => {
 
   return (
     <>
-      <Navbar setIsSidebarOpen={setIsOpen} />
+      <Navbar isSidebarOpen={isOpen} setIsSidebarOpen={setIsOpen} />
       <Sidebar isSidebarOpen={isOpen} />
 
       {/* Content */}
