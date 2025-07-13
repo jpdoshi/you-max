@@ -104,42 +104,52 @@ const Subscriptions = () => (
         src="https://yt3.ggpht.com/a9H7WKItDwvu0dBOdsriUGGXX0gGShPDYQbFLwRQzQgx4Vkre2b9QKKuqjBZYEFcqf_s6TLy74M=s88-c-k-c0x00ffffff-no-rj"
         className="size-6 rounded-full"
       />
-      <span className="font-medium text-sm text-nowrap">Beebom</span>
+      <span className="font-medium text-sm text-nowrap line-clamp-1 text-ellipsis">
+        Beebom
+      </span>
     </button>
     <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
       <img
         src="https://yt3.ggpht.com/pTVQZnWTnD80e1FvzEEg5dwEvSg_IB5NBRB3tPvJZIzhGNYWoJ9b1YibM77KOahob0ftDyq0=s88-c-k-c0x00ffffff-no-rj"
         className="size-6 rounded-full"
       />
-      <span className="font-medium text-sm text-nowrap">Bog</span>
+      <span className="font-medium text-sm text-nowrap line-clamp-1 text-ellipsis">
+        Bog
+      </span>
     </button>
     <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
       <img
         src="https://yt3.ggpht.com/ytc/AIdro_mKzklyPPhghBJQH5H3HpZ108YcE618DBRLAvRUD1AjKNw=s88-c-k-c0x00ffffff-no-rj"
         className="size-6 rounded-full"
       />
-      <span className="font-medium text-sm text-nowrap">Fireship</span>
+      <span className="font-medium text-sm text-nowrap line-clamp-1 text-ellipsis">
+        Fireship
+      </span>
     </button>
     <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
       <img
         src="https://yt3.ggpht.com/ytc/AIdro_kwy8w3j_dAOK2bt7t6gdkFbUuh2jc8qE9EmxHscjnMpwQ=s88-c-k-c0x00ffffff-no-rj"
         className="size-6 rounded-full"
       />
-      <span className="font-medium text-sm text-nowrap">Goosiest</span>
+      <span className="font-medium text-sm text-nowrap line-clamp-1 text-ellipsis">
+        Goosiest
+      </span>
     </button>
     <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
       <img
         src="https://yt3.ggpht.com/jEQW7cEjKOmcnvhkoLfMwqzlS1K048IY9TH04kHJ9O2RJBw9WWG1KCItOnBd-zbKRfM4Og086w=s88-c-k-c0x00ffffff-no-rj"
         className="size-6 rounded-full"
       />
-      <span className="font-medium text-sm text-nowrap">SAMTIME</span>
+      <span className="font-medium text-sm text-nowrap line-clamp-1 text-ellipsis">
+        SAMTIME
+      </span>
     </button>
     <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
       <img
         src="https://yt3.ggpht.com/ytc/AIdro_lgA3xMKNY0-d05dSmj3zt7CeTS1QSS5jVgOWqD03VsSm4=s88-c-k-c0x00ffffff-no-rj"
         className="size-6 rounded-full"
       />
-      <span className="font-medium text-sm text-nowrap">
+      <span className="font-medium text-sm text-nowrap line-clamp-1 text-ellipsis">
         JerryRigEverything
       </span>
     </button>
@@ -148,7 +158,7 @@ const Subscriptions = () => (
         src="https://yt3.ggpht.com/ek0JxMA0h1uXpnYKFL_dYo1ny3LWzAuLwGvaqQwb9Qh2oEQJIPNEPjDrY9yKsvMmIrq_Ooq_=s88-c-k-c0x00ffffff-no-rj"
         className="size-6 rounded-full"
       />
-      <span className="font-medium text-sm text-nowrap">
+      <span className="font-medium text-sm text-nowrap line-clamp-1 text-ellipsis">
         JavaScript Mastery
       </span>
     </button>
@@ -157,7 +167,9 @@ const Subscriptions = () => (
         src="https://yt3.ggpht.com/ytc/AIdro_k01-_GpvVZW8w4ULtaQaa55ls8aMf2a5dXhIe56pjMvG0=s88-c-k-c0x00ffffff-no-rj"
         className="size-6 rounded-full"
       />
-      <span className="font-medium text-sm text-nowrap">NetworkChuck</span>
+      <span className="font-medium text-sm text-nowrap line-clamp-1 text-ellipsis">
+        NetworkChuck
+      </span>
     </button>
 
     {/* Show All */}
@@ -230,17 +242,15 @@ const MoreActions = () => (
 
 const Sidebar = ({ isSidebarOpen }: Props) => {
   return (
-    isSidebarOpen && (
-      <aside
-        className={`fixed top-[60px] left-0 h-[calc(100vh-60px)] border-r border-neutral-900 bg-[rgba(0,0,0,0.1)] backdrop-blur-md px-3 overflow-x-hidden overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-neutral-700 [&::-webkit-scrollbar-thumb]:rounded-full ${
-          isSidebarOpen ? "w-[240px]" : "w-0"
-        }`}
-      >
-        <UserActions />
-        <Subscriptions />
-        <MoreActions />
-      </aside>
-    )
+    <aside
+      className={`fixed top-[50px] left-0 h-[calc(100vh-50px)] duration-300 origin-left border-r border-neutral-900 bg-[rgba(0,0,0,0.5)] backdrop-blur-xl px-3 z-50 overflow-x-hidden overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-neutral-700 [&::-webkit-scrollbar-thumb]:rounded-full ${
+        isSidebarOpen ? "w-[240px] translate-x-0" : "w-0 -translate-x-[240px]"
+      }`}
+    >
+      <UserActions />
+      <Subscriptions />
+      <MoreActions />
+    </aside>
   );
 };
 

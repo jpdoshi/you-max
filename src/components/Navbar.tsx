@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router";
 
 import LogoImage from "../assets/images/logo.png";
@@ -9,14 +9,16 @@ interface Props {
 }
 
 const Navbar = ({ isSidebarOpen, setIsSidebarOpen }: Props) => {
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
   return (
-    <nav className="fixed top-0 left-0 h-[60px] w-full px-4 md:px-5 bg-[rgba(0,0,0,0.1)] backdrop-blur-md border-b border-neutral-800 z-50">
-      <div className="h-[60px] flex flex-row justify-between items-center">
+    <nav className="fixed top-0 left-0 h-[50px] w-full px-4 md:px-5 bg-[rgba(0,0,0,0.5)] backdrop-blur-xl border-b border-neutral-900 z-50">
+      <div className="h-[50px] flex flex-row justify-between items-center">
         {/* Left Div */}
         <div className="flex flex-row gap-4 items-center">
           <button
             className={`rounded-full p-2 hover:bg-neutral-800 duration-300 cursor-pointer ${
-              !isSidebarOpen && "rotate-90"
+              !isSidebarOpen && "rotate-180"
             }`}
             onClick={() => setIsSidebarOpen((prevState: any) => !prevState)}
           >
@@ -41,7 +43,7 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen }: Props) => {
         </div>
 
         {/* Searchbar */}
-        <div className="border border-neutral-700 bg-[rgba(255,255,255,0.1)] rounded-xl h-9 px-3 w-lg max-w-full flex flex-row gap-2.5 items-center">
+        <div className="border border-neutral-700 bg-[rgba(255,255,255,0.125)] backdrop-blur-lg rounded-xl h-8 px-2 w-lg max-w-full flex flex-row gap-2 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -58,9 +60,32 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen }: Props) => {
           </svg>
           <input
             type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             className="flex-1 text-sm outline-none"
             placeholder="What'd you like to watch?"
           />
+          {searchQuery.trim() && (
+            <button
+              onClick={() => setSearchQuery("")}
+              className="cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="#fff"
+                className="size-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          )}
         </div>
 
         {/* Right Div */}

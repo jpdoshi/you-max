@@ -10,4 +10,5 @@ body {
   color: white;
   background-color: black;
   font-family: "Inter";
+  overflow-x: hidden !important;
 }

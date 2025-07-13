@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import useSidebar from "../hooks/Sidebar";
+import Feed from "../components/Feed";
 
 const Home = () => {
   const { isOpen, setIsOpen } = useSidebar();
@@ -12,9 +13,9 @@ const Home = () => {
       <Sidebar isSidebarOpen={isOpen} />
 
       {/* Content */}
-      <main className="px-4 md:px-5 mt-[60px]">
-        <div className={`${isOpen ? "ml-[240px]" : "ml-0"} py-6 duration-300`}>
-          <h1 className="text-2xl font-bold">Home Works!</h1>
+      <main className="px-4 md:px-5 mt-[50px]">
+        <div className={`py-6 duration-300`}>
+          <Feed />
         </div>
       </main>
     </>
