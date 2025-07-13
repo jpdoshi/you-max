@@ -14,7 +14,7 @@ const Home = () => {
 
       {/* Content */}
       <main className="px-4 md:px-5 mt-[50px]">
-        <div className={`py-6 duration-300`}>
+        <div className={`pt-2 duration-300`}>
           <Feed />
         </div>
       </main>

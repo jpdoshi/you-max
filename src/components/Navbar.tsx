@@ -12,7 +12,7 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen }: Props) => {
   const [searchQuery, setSearchQuery] = useState<string>("");
 
   return (
-    <nav className="fixed top-0 left-0 h-[50px] w-full px-4 md:px-5 bg-[rgba(0,0,0,0.5)] backdrop-blur-xl border-b border-neutral-900 z-50">
+    <nav className="fixed top-0 left-0 h-[50px] w-full px-4 md:px-5 bg-[rgba(0,0,0,0.5)] backdrop-blur-xl z-50">
       <div className="h-[50px] flex flex-row justify-between items-center">
         {/* Left Div */}
         <div className="flex flex-row gap-4 items-center">
