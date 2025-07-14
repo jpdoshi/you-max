@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import useSidebar from "../hooks/Sidebar";
@@ -8,7 +7,7 @@ const Home = () => {
   const { isOpen, setIsOpen } = useSidebar();
 
   return (
-    <>
+    <div>
       <Navbar isSidebarOpen={isOpen} setIsSidebarOpen={setIsOpen} />
       <Sidebar isSidebarOpen={isOpen} />
 
@@ -18,7 +17,7 @@ const Home = () => {
           <Feed />
         </div>
       </main>
-    </>
+    </div>
   );
 };
 
