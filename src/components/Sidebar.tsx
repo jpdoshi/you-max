@@ -3,7 +3,7 @@ interface Props {
 }
 
 const UserActions = () => (
-  <div className="flex flex-col gap-1 py-3 border-b border-neutral-800">
+  <div className="flex flex-col gap-1 py-3 border-b border-neutral-600">
     <h3 className="font-semibold my-2 mx-4">Your Space</h3>
     <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
       <svg
@@ -95,7 +95,7 @@ const UserActions = () => (
 );
 
 const Subscriptions = () => (
-  <div className="flex flex-col gap-1 py-3 border-b border-neutral-800">
+  <div className="flex flex-col gap-1 py-3 border-b border-neutral-600">
     <h3 className="font-semibold my-2 mx-4">Subscriptions</h3>
     <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
       <img
@@ -241,7 +241,7 @@ const MoreActions = () => (
 const Sidebar = ({ isSidebarOpen }: Props) => {
   return (
     <aside
-      className={`fixed top-[50px] left-0 h-[calc(100vh-50px)] duration-300 origin-left border-r border-neutral-900 bg-[rgba(0,0,0,0.5)] backdrop-blur-xl px-3 z-50 overflow-x-hidden overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-neutral-700 [&::-webkit-scrollbar-thumb]:rounded-full ${
+      className={`fixed top-[50px] left-0 h-[calc(100vh-50px)] duration-300 origin-left border-r border-neutral-900 bg-[rgba(0,0,0,0.5)] backdrop-blur-xl px-3 z-50 overflow-x-hidden overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-neutral-600 [&::-webkit-scrollbar-thumb]:rounded-full ${
         isSidebarOpen ? "w-[240px] translate-x-0" : "w-0 -translate-x-[240px]"
       }`}
     >

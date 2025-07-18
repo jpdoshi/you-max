@@ -43,7 +43,7 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen }: Props) => {
         </div>
 
         {/* Searchbar */}
-        <div className="border border-neutral-700 bg-[rgba(255,255,255,0.125)] backdrop-blur-lg rounded-xl h-8 px-2 w-lg max-w-full flex flex-row gap-2 items-center">
+        <div className="border border-neutral-600 bg-[rgba(255,255,255,0.125)] backdrop-blur-lg rounded-xl h-8 px-2 w-lg max-w-full flex flex-row gap-2 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
