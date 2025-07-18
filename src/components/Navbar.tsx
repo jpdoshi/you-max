@@ -15,7 +15,7 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen }: Props) => {
     <nav className="fixed top-0 left-0 h-[50px] w-full px-4 md:px-5 bg-[rgba(0,0,0,0.5)] backdrop-blur-xl z-50">
       <div className="h-[50px] flex flex-row justify-between items-center">
         {/* Left Div */}
-        <div className="flex flex-row gap-4 items-center">
+        <div className="flex flex-row gap-3 items-center">
           <button
             className={`rounded-full p-2 hover:bg-neutral-800 duration-300 cursor-pointer ${
               !isSidebarOpen && "rotate-180"
@@ -38,7 +38,7 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen }: Props) => {
             </svg>
           </button>
           <Link to={"/"}>
-            <img src={LogoImage} className="h-6" />
+            <img src={LogoImage} className="h-7" />
           </Link>
         </div>
 
