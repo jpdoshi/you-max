@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { motion } from "framer-motion";
 import { convertISODuration, convertUnits } from "../utils/unitConvert";
 import moment from "moment";
+import LazyImage from "./LazyImage";
 
 interface Props {
   categoryId: number;
@@ -22,10 +23,10 @@ const VideoCard = ({ categoryId, videoId, item }: Props) => {
         className="mb-1"
       >
         <div className="img-container relative w-full aspect-video">
-          <img
+          <LazyImage
+            alt={item?.snippet?.title}
             src={item?.snippet.thumbnails?.medium?.url}
             className="w-full rounded-lg group-hover:brightness-125"
-            loading="lazy"
           />
           <span className="absolute bottom-0 right-0 m-1 py-1 px-1.5 bg-[rgba(0,0,0,0.5)] text-xs font-semibold rounded-lg">
             {convertISODuration(item?.contentDetails?.duration)}
