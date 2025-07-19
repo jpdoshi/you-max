@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import VideoCard from "./VideoCard";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { useFetch } from "../hooks/useFetch";
 import { FETCH_VIDEOS_BY_CATEGORY } from "../constants/urls";
 import { FadeLoader } from "react-spinners";
