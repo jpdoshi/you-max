@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { motion } from "framer-motion";
-import { convertUnits } from "../utils/unitConvert";
+import { convertISODuration, convertUnits } from "../utils/unitConvert";
 import moment from "moment";
 
 interface Props {
@@ -28,7 +28,7 @@ const VideoCard = ({ categoryId, videoId, item }: Props) => {
             loading="lazy"
           />
           <span className="absolute bottom-0 right-0 m-1 py-1 px-1.5 bg-[rgba(0,0,0,0.5)] text-xs font-semibold rounded-lg">
-            38:45
+            {convertISODuration(item?.contentDetails?.duration)}
           </span>
         </div>
         <div className="px-2 py-3">
