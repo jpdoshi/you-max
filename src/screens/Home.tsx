@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
-import useSidebar from "../hooks/Sidebar";
+import useSidebar from "../hooks/useSidebar";
 import Feed from "../components/Feed";
 
 const Home = () => {

@@ -12,10 +12,10 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen }: Props) => {
   const [searchQuery, setSearchQuery] = useState<string>("");
 
   return (
-    <nav className="fixed top-0 left-0 h-[50px] w-full px-4 md:px-5 bg-[rgba(0,0,0,0.5)] backdrop-blur-xl z-50">
-      <div className="h-[50px] flex flex-row justify-between items-center">
+    <nav className="fixed top-0 left-0 h-[50px] w-full px-2 md:px-5 bg-[rgba(0,0,0,0.67)] backdrop-blur-2xl z-50 border-b border-neutral-800">
+      <div className="h-[50px] flex flex-row justify-between gap-1 items-center">
         {/* Left Div */}
-        <div className="flex flex-row gap-3 items-center">
+        <div className="flex md:flex-row md:gap-3 items-center">
           <button
             className={`rounded-full p-2 hover:bg-neutral-800 duration-300 cursor-pointer ${
               !isSidebarOpen && "rotate-180"
@@ -38,7 +38,7 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen }: Props) => {
             </svg>
           </button>
           <Link to={"/"}>
-            <img src={LogoImage} className="h-7" />
+            <img src={LogoImage} className="hidden md:block h-7" />
           </Link>
         </div>
 
@@ -89,7 +89,7 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen }: Props) => {
         </div>
 
         {/* Right Div */}
-        <div className="flex flex-row gap-1 items-center">
+        <div className="flex flex-row md:gap-1 items-center">
           <button className="p-2 hover:bg-neutral-800 rounded-full duration-300 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"

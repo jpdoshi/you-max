@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 interface Props {
   isSidebarOpen: boolean;
 }
@@ -240,15 +242,15 @@ const MoreActions = () => (
 
 const Sidebar = ({ isSidebarOpen }: Props) => {
   return (
-    <aside
-      className={`fixed top-[50px] left-0 h-[calc(100vh-50px)] duration-300 origin-left border-r border-neutral-900 bg-[rgba(0,0,0,0.5)] backdrop-blur-xl px-3 z-50 overflow-x-hidden overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-neutral-600 [&::-webkit-scrollbar-thumb]:rounded-full ${
-        isSidebarOpen ? "w-[240px] translate-x-0" : "w-0 -translate-x-[240px]"
-      }`}
+    <motion.aside
+      initial={{ x: -240 }}
+      animate={{ x: isSidebarOpen ? 0 : -240 }}
+      className="fixed top-[50px] left-0 h-[calc(100vh-50px)] origin-left border-r border-neutral-900 bg-[rgba(0,0,0,0.5)] backdrop-blur-xl px-3 z-50 overflow-x-hidden overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-neutral-600 [&::-webkit-scrollbar-thumb]:rounded-full"
     >
       <UserActions />
       <Subscriptions />
       <MoreActions />
-    </aside>
+    </motion.aside>
   );
 };
 
