@@ -3,6 +3,7 @@ import { API_KEY } from "../config";
 
 export async function fetchSearchVideo(
   nextPageToken: string,
+  maxResults = 25,
   searchQuery: string
 ): Promise<any> {
   try {
@@ -13,42 +14,23 @@ export async function fetchSearchVideo(
           part: "snippet",
           nextPageToken,
           q: searchQuery,
+          order: "date",
           type: "video",
+          regionCode: "US",
+          safeSearch: "strict",
           videoEmbeddable: "true",
-          maxResults: 5,
-          key: API_KEY,
-        },
-      }
-    );
-
-    const videoIds = searchResponse.data.items
-      .map((item: any) => item.id.videoId)
-      .filter(Boolean);
-
-    if (videoIds.length === 0) {
-      return [];
-    }
-
-    // Step 2: Get video details (duration, views)
-    const videoResponse = await axios.get(
-      "https://www.googleapis.com/youtube/v3/videos",
-      {
-        params: {
-          part: "snippet,contentDetails,statistics",
-          id: videoIds.join(","),
+          maxResults,
           key: API_KEY,
         },
       }
     );
 
     // Format output
-    const videoInfo: any = videoResponse.data.items.map((item: any) => ({
-      id: item.id,
+    const videoInfo: any = searchResponse.data.items.map((item: any) => ({
+      id: item.id.videoId,
       title: item.snippet.title,
       thumbnail: item.snippet.thumbnails.medium.url,
-      duration: item.contentDetails.duration,
-      viewCount: item.statistics.viewCount,
-      channel: item.snippet.channelTitle,
+      channel: { title: item.snippet.channelTitle, id: item.snippet.channelId },
       publishedAt: item.snippet.publishedAt,
     }));
 

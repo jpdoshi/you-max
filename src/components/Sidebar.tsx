@@ -1,8 +1,5 @@
 import { motion } from "framer-motion";
-
-interface Props {
-  isSidebarOpen: boolean;
-}
+import { primary } from "../constants/colors";
 
 const UserActions = () => (
   <div className="flex flex-col gap-1 py-3 border-b border-neutral-600">
@@ -13,7 +10,7 @@ const UserActions = () => (
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
-        stroke="#fff"
+        stroke={primary}
         className="size-5"
       >
         <path
@@ -31,7 +28,7 @@ const UserActions = () => (
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
-        stroke="#fff"
+        stroke={primary}
         className="size-5"
       >
         <path
@@ -48,7 +45,7 @@ const UserActions = () => (
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
-        stroke="currentColor"
+        stroke={primary}
         className="size-5"
       >
         <path
@@ -65,7 +62,7 @@ const UserActions = () => (
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
-        stroke="#fff"
+        stroke={primary}
         className="size-5"
       >
         <path
@@ -79,6 +76,156 @@ const UserActions = () => (
   </div>
 );
 
+const Categories = ({ category, setCategory }: any) => (
+  <div className="flex flex-col gap-1 py-3 border-b border-neutral-600">
+    <h3 className="font-semibold my-2 mx-4">Categories</h3>
+    <button
+      onClick={() => setCategory("Productivity")}
+      className={`py-1.5 px-3 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center ${
+        category == "Productivity"
+          ? "bg-neutral-800 hover:bg-neutral-700"
+          : "hover:bg-neutral-800"
+      }`}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke={primary}
+        className="size-5"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605"
+        />
+      </svg>
+      <span className="font-medium text-sm text-nowrap">Productivity</span>
+    </button>
+    <button
+      onClick={() => setCategory("Education")}
+      className={`py-1.5 px-3 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center ${
+        category == "Education"
+          ? "bg-neutral-800 hover:bg-neutral-700"
+          : "hover:bg-neutral-800"
+      }`}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke={primary}
+        className="size-5"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+        />
+      </svg>
+      <span className="font-medium text-sm text-nowrap">Education</span>
+    </button>
+    <button
+      onClick={() => setCategory("Science & Technology")}
+      className={`py-1.5 px-3 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center ${
+        category == "Science & Technology"
+          ? "bg-neutral-800 hover:bg-neutral-700"
+          : "hover:bg-neutral-800"
+      }`}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke={primary}
+        className="size-5"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
+        />
+      </svg>
+      <span className="font-medium text-sm text-nowrap">Technology</span>
+    </button>
+    <button
+      onClick={() => setCategory("People & Blogs")}
+      className={`py-1.5 px-3 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center ${
+        category == "People & Blogs"
+          ? "bg-neutral-800 hover:bg-neutral-700"
+          : "hover:bg-neutral-800"
+      }`}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke={primary}
+        className="size-5"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"
+        />
+      </svg>
+      <span className="font-medium text-sm text-nowrap">People</span>
+    </button>
+    <button
+      onClick={() => setCategory("News & Politics")}
+      className={`py-1.5 px-3 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center ${
+        category == "News & Politics"
+          ? "bg-neutral-800 hover:bg-neutral-700"
+          : "hover:bg-neutral-800"
+      }`}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke={primary}
+        className="size-5"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"
+        />
+      </svg>
+      <span className="font-medium text-sm text-nowrap">News & Politics</span>
+    </button>
+    <button
+      onClick={() => setCategory("Career Development")}
+      className={`py-1.5 px-3 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center ${
+        category == "Career Development"
+          ? "bg-neutral-800 hover:bg-neutral-700"
+          : "hover:bg-neutral-800"
+      }`}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke={primary}
+        className="size-5"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
+        />
+      </svg>
+      <span className="font-medium text-sm text-nowrap">Career</span>
+    </button>
+  </div>
+);
+
 const MoreActions = () => (
   <div className="flex flex-col gap-1 py-3">
     <h3 className="font-semibold my-2 mx-4">More</h3>
@@ -88,7 +235,7 @@ const MoreActions = () => (
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
-        stroke="#fff"
+        stroke={primary}
         className="size-5"
       >
         <path
@@ -105,7 +252,7 @@ const MoreActions = () => (
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
-        stroke="#fff"
+        stroke={primary}
         className="size-5"
       >
         <path
@@ -122,7 +269,7 @@ const MoreActions = () => (
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
-        stroke="#fff"
+        stroke={primary}
         className="size-5"
       >
         <path
@@ -141,14 +288,15 @@ const MoreActions = () => (
   </div>
 );
 
-const Sidebar = ({ isSidebarOpen }: Props) => {
+const Sidebar = ({ isSidebarOpen, category, setCategory }: any) => {
   return (
     <motion.aside
-      initial={{ x: -240 }}
+      initial={{ x: window.innerWidth > 768 ? 0 : -240 }}
       animate={{ x: isSidebarOpen ? 0 : -240 }}
-      className="fixed top-[50px] left-0 h-[calc(100vh-50px)] origin-left border-r border-neutral-900 bg-[rgba(0,0,0,0.5)] backdrop-blur-xl px-3 z-50 overflow-x-hidden overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-neutral-600 [&::-webkit-scrollbar-thumb]:rounded-full"
+      className="fixed top-[50px] left-0 h-[calc(100vh-50px)] w-[200px] origin-left border-r border-neutral-900 bg-[rgba(0,0,0,0.5)] backdrop-blur-xl px-3 z-50 overflow-x-hidden overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-neutral-600 [&::-webkit-scrollbar-thumb]:rounded-full"
     >
       <UserActions />
+      <Categories category={category} setCategory={setCategory} />
       <MoreActions />
     </motion.aside>
   );

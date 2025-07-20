@@ -1,8 +1,7 @@
 import { Link } from "react-router";
 import { motion } from "framer-motion";
-import { convertISODuration, convertUnits } from "../utils/unitConvert";
-import moment from "moment";
 import LazyImage from "./LazyImage";
+import moment from "moment";
 
 const VideoCard = ({ videoProps }: any) => {
   return (
@@ -19,23 +18,19 @@ const VideoCard = ({ videoProps }: any) => {
             src={videoProps?.thumbnail}
             className="w-full rounded-t-lg group-hover:brightness-125"
           />
-          <span className="absolute bottom-0 right-0 m-1 py-1 px-1.5 bg-[rgba(0,0,0,0.5)] text-xs font-semibold rounded-lg">
-            {convertISODuration(videoProps.duration)}
-          </span>
         </div>
         <div className="p-3 bg-neutral-900 rounded-b-xl">
           <div className="flex flex-col gap-0.5">
             <h3 className="font-semibold text-[15px] leading-snug tracking-normal line-clamp-2 text-ellipsis">
               {videoProps.title}
             </h3>
-            <p className="text-sm opacity-80 font-medium line-clamp-1 text-ellipsis">
-              {videoProps.channel}
-            </p>
-            <div className="flex flex-row items-center gap-1.5 opacity-70">
-              <span className="text-sm">
-                {convertUnits(videoProps.viewCount)} views
-              </span>
-              <div className="size-1 bg-white rounded-full" />
+            <Link
+              to={`/channel/${videoProps.channel.id}`}
+              className="text-sm opacity-80 font-medium line-clamp-1 text-ellipsis"
+            >
+              {videoProps.channel.title}
+            </Link>
+            <div className="opacity-70">
               <span className="text-sm">
                 {moment(videoProps.publishedAt).fromNow()}
               </span>

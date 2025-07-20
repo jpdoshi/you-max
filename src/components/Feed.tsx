@@ -3,6 +3,7 @@ import VideoCard from "./VideoCard";
 import { ToastContainer } from "react-toastify";
 import { FadeLoader } from "react-spinners";
 import { fetchSearchVideo } from "../api/fetchSearch";
+import { primary } from "../constants/colors";
 
 const Feed = ({ category = "Productivity" }) => {
   const [nextPageToken, setNextPageToken] = useState("");
@@ -11,7 +12,7 @@ const Feed = ({ category = "Productivity" }) => {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    fetchSearchVideo(nextPageToken, category)
+    fetchSearchVideo(nextPageToken, 5, category)
       .then((data) => {
         setData(data.videoInfo);
         setNextPageToken(data.nextPageToken);
@@ -20,12 +21,12 @@ const Feed = ({ category = "Productivity" }) => {
       .catch((err) =>
         setError(err instanceof Error ? err : Error(err?.toString()))
       );
-  }, []);
+  }, [category]);
 
   if (loading) {
     return (
-      <div className="h-[calc(100vh-60px)] w-full flex justify-center items-center">
-        <FadeLoader loading={true} color="#b2071d" />
+      <div className="h-[calc(100vh-200px)] w-full flex justify-center items-center">
+        <FadeLoader loading={true} color={primary} />
       </div>
     );
   } else if (error) {

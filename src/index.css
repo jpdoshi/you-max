@@ -6,6 +6,10 @@
   font-display: swap;
 }
 
+@theme {
+  --color-primary: #b2071d;
+}
+
 body {
   color: white;
   background-color: black;
