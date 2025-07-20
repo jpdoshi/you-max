@@ -1,27 +1,25 @@
 import { useEffect, useState } from "react";
-import VideoCard from "./VideoCard";
 import { ToastContainer } from "react-toastify";
 import { FadeLoader } from "react-spinners";
 import { fetchSearchVideo } from "../api/fetchSearch";
 import { primary } from "../constants/colors";
+import VideoTile from "./VideoTile";
 
-const Feed = ({ category = "Productivity" }) => {
-  const [nextPageToken, setNextPageToken] = useState("");
+const SearchFeed = ({ query = "" }: { query: string }) => {
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    fetchSearchVideo(nextPageToken, 50, category)
+    fetchSearchVideo("", 25, query)
       .then((data) => {
         setData(data.videoInfo);
-        setNextPageToken(data.nextPageToken);
         setLoading(false);
       })
       .catch((err) =>
         setError(err instanceof Error ? err : Error(err?.toString()))
       );
-  }, [category]);
+  }, [query]);
 
   if (loading) {
     return (
@@ -55,15 +53,15 @@ const Feed = ({ category = "Productivity" }) => {
     return (
       <main>
         <ToastContainer />
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-5 mb-8">
           {!loading &&
             data &&
             data?.map((item, index) => (
-              <VideoCard key={index} videoProps={item} />
+              <VideoTile key={index} videoProps={item} />
             ))}
         </div>
       </main>
     );
 };
 
-export default Feed;
+export default SearchFeed;

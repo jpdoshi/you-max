@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { primary } from "../constants/colors";
+import { useLocation, useNavigate } from "react-router";
 
 const UserActions = () => (
   <div className="flex flex-col gap-1 py-3 border-b border-neutral-600">
@@ -76,13 +77,16 @@ const UserActions = () => (
   </div>
 );
 
-const Categories = ({ category, setCategory }: any) => (
+const Categories = ({ pathname, category, setCategory, navigate }: any) => (
   <div className="flex flex-col gap-1 py-3 border-b border-neutral-600">
     <h3 className="font-semibold my-2 mx-4">Categories</h3>
     <button
-      onClick={() => setCategory("Productivity")}
+      onClick={() => {
+        setCategory("Productivity");
+        navigate("/");
+      }}
       className={`py-1.5 px-3 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center ${
-        category == "Productivity"
+        pathname == "/" && category == "Productivity"
           ? "bg-neutral-800 hover:bg-neutral-700"
           : "hover:bg-neutral-800"
       }`}
@@ -104,9 +108,12 @@ const Categories = ({ category, setCategory }: any) => (
       <span className="font-medium text-sm text-nowrap">Productivity</span>
     </button>
     <button
-      onClick={() => setCategory("Education")}
+      onClick={() => {
+        setCategory("Education");
+        navigate("/");
+      }}
       className={`py-1.5 px-3 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center ${
-        category == "Education"
+        pathname == "/" && category == "Education"
           ? "bg-neutral-800 hover:bg-neutral-700"
           : "hover:bg-neutral-800"
       }`}
@@ -128,9 +135,12 @@ const Categories = ({ category, setCategory }: any) => (
       <span className="font-medium text-sm text-nowrap">Education</span>
     </button>
     <button
-      onClick={() => setCategory("Science & Technology")}
+      onClick={() => {
+        setCategory("Science & Technology");
+        navigate("/");
+      }}
       className={`py-1.5 px-3 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center ${
-        category == "Science & Technology"
+        pathname == "/" && category == "Science & Technology"
           ? "bg-neutral-800 hover:bg-neutral-700"
           : "hover:bg-neutral-800"
       }`}
@@ -152,9 +162,12 @@ const Categories = ({ category, setCategory }: any) => (
       <span className="font-medium text-sm text-nowrap">Technology</span>
     </button>
     <button
-      onClick={() => setCategory("People & Blogs")}
+      onClick={() => {
+        setCategory("People & Blogs");
+        navigate("/");
+      }}
       className={`py-1.5 px-3 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center ${
-        category == "People & Blogs"
+        pathname == "/" && category == "People & Blogs"
           ? "bg-neutral-800 hover:bg-neutral-700"
           : "hover:bg-neutral-800"
       }`}
@@ -176,9 +189,12 @@ const Categories = ({ category, setCategory }: any) => (
       <span className="font-medium text-sm text-nowrap">People</span>
     </button>
     <button
-      onClick={() => setCategory("News & Politics")}
+      onClick={() => {
+        setCategory("News & Politics");
+        navigate("/");
+      }}
       className={`py-1.5 px-3 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center ${
-        category == "News & Politics"
+        pathname == "/" && category == "News & Politics"
           ? "bg-neutral-800 hover:bg-neutral-700"
           : "hover:bg-neutral-800"
       }`}
@@ -200,9 +216,12 @@ const Categories = ({ category, setCategory }: any) => (
       <span className="font-medium text-sm text-nowrap">News & Politics</span>
     </button>
     <button
-      onClick={() => setCategory("Career Development")}
+      onClick={() => {
+        setCategory("Career Development");
+        navigate("/");
+      }}
       className={`py-1.5 px-3 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center ${
-        category == "Career Development"
+        pathname == "/" && category == "Career Development"
           ? "bg-neutral-800 hover:bg-neutral-700"
           : "hover:bg-neutral-800"
       }`}
@@ -289,6 +308,9 @@ const MoreActions = () => (
 );
 
 const Sidebar = ({ isSidebarOpen, category, setCategory }: any) => {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
   return (
     <motion.aside
       initial={{ x: window.innerWidth > 768 ? 0 : -240 }}
@@ -296,7 +318,12 @@ const Sidebar = ({ isSidebarOpen, category, setCategory }: any) => {
       className="fixed top-[50px] left-0 h-[calc(100vh-50px)] w-[200px] origin-left border-r border-neutral-900 bg-[rgba(0,0,0,0.5)] backdrop-blur-xl px-3 z-50 overflow-x-hidden overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-neutral-600 [&::-webkit-scrollbar-thumb]:rounded-full"
     >
       <UserActions />
-      <Categories category={category} setCategory={setCategory} />
+      <Categories
+        pathname={pathname}
+        category={category}
+        setCategory={setCategory}
+        navigate={navigate}
+      />
       <MoreActions />
     </motion.aside>
   );

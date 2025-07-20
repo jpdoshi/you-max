@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 import LogoImage from "../assets/images/logo.png";
 
@@ -10,6 +10,7 @@ interface Props {
 
 const Navbar = ({ isSidebarOpen, setIsSidebarOpen }: Props) => {
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const navigate = useNavigate();
 
   return (
     <nav className="fixed top-0 left-0 h-[50px] w-full px-2 md:px-5 bg-[rgba(0,0,0,0.67)] backdrop-blur-2xl z-50 border-b border-neutral-800">
@@ -49,6 +50,11 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen }: Props) => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyUp={(e) => {
+                if (e.key == "Enter" && searchQuery.trim()) {
+                  navigate(`/search/${searchQuery?.trim()}`);
+                }
+              }}
               className="flex-1 text-sm outline-none"
               placeholder="What'd you like to watch?"
             />
@@ -74,7 +80,13 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen }: Props) => {
               </button>
             )}
           </div>
-          <div className="px-3 bg-neutral-700 hover:bg-neutral-600 duration-300 cursor-pointer rounded-r-xl flex justify-center items-center">
+          <div
+            onClick={() => {
+              if (searchQuery?.trim())
+                navigate(`/search/${searchQuery?.trim()}`);
+            }}
+            className="px-3 bg-neutral-700 hover:bg-neutral-600 duration-300 cursor-pointer rounded-r-xl flex justify-center items-center"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
