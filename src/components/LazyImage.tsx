@@ -14,7 +14,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
   showSpinner = false,
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [imageSrc, setImageSrc] = useState<string | null>(null);
+  const [imageSrc, setImageSrc] = useState<string>("");
 
   useEffect(() => {
     setIsLoaded(false);
@@ -30,7 +30,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
       )}
 
       <img
-        src={imageSrc ?? ""}
+        src={imageSrc}
         alt={alt}
         loading="lazy"
         onLoad={() => setIsLoaded(true)}

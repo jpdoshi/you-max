@@ -76,120 +76,6 @@ const UserActions = () => (
       </svg>
       <span className="font-medium text-sm text-nowrap">Watch Later</span>
     </button>
-    <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="#fff"
-        className="size-5"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z"
-        />
-      </svg>
-      <span className="font-medium text-sm text-nowrap">Liked Videos</span>
-    </button>
-  </div>
-);
-
-const Subscriptions = () => (
-  <div className="flex flex-col gap-1 py-3 border-b border-neutral-600">
-    <h3 className="font-semibold my-2 mx-4">Subscriptions</h3>
-    <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
-      <img
-        src="https://yt3.ggpht.com/a9H7WKItDwvu0dBOdsriUGGXX0gGShPDYQbFLwRQzQgx4Vkre2b9QKKuqjBZYEFcqf_s6TLy74M=s88-c-k-c0x00ffffff-no-rj"
-        className="size-6 rounded-full"
-      />
-      <span className="font-medium text-sm text-nowrap line-clamp-1 text-ellipsis">
-        Beebom
-      </span>
-    </button>
-    <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
-      <img
-        src="https://yt3.ggpht.com/pTVQZnWTnD80e1FvzEEg5dwEvSg_IB5NBRB3tPvJZIzhGNYWoJ9b1YibM77KOahob0ftDyq0=s88-c-k-c0x00ffffff-no-rj"
-        className="size-6 rounded-full"
-      />
-      <span className="font-medium text-sm text-nowrap line-clamp-1 text-ellipsis">
-        Bog
-      </span>
-    </button>
-    <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
-      <img
-        src="https://yt3.ggpht.com/ytc/AIdro_mKzklyPPhghBJQH5H3HpZ108YcE618DBRLAvRUD1AjKNw=s88-c-k-c0x00ffffff-no-rj"
-        className="size-6 rounded-full"
-      />
-      <span className="font-medium text-sm text-nowrap line-clamp-1 text-ellipsis">
-        Fireship
-      </span>
-    </button>
-    <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
-      <img
-        src="https://yt3.ggpht.com/ytc/AIdro_kwy8w3j_dAOK2bt7t6gdkFbUuh2jc8qE9EmxHscjnMpwQ=s88-c-k-c0x00ffffff-no-rj"
-        className="size-6 rounded-full"
-      />
-      <span className="font-medium text-sm text-nowrap line-clamp-1 text-ellipsis">
-        Goosiest
-      </span>
-    </button>
-    <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
-      <img
-        src="https://yt3.ggpht.com/jEQW7cEjKOmcnvhkoLfMwqzlS1K048IY9TH04kHJ9O2RJBw9WWG1KCItOnBd-zbKRfM4Og086w=s88-c-k-c0x00ffffff-no-rj"
-        className="size-6 rounded-full"
-      />
-      <span className="font-medium text-sm text-nowrap line-clamp-1 text-ellipsis">
-        SAMTIME
-      </span>
-    </button>
-    <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
-      <img
-        src="https://yt3.ggpht.com/ytc/AIdro_lgA3xMKNY0-d05dSmj3zt7CeTS1QSS5jVgOWqD03VsSm4=s88-c-k-c0x00ffffff-no-rj"
-        className="size-6 rounded-full"
-      />
-      <span className="font-medium text-sm text-nowrap line-clamp-1 text-ellipsis">
-        JerryRigEverything
-      </span>
-    </button>
-    <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
-      <img
-        src="https://yt3.ggpht.com/ek0JxMA0h1uXpnYKFL_dYo1ny3LWzAuLwGvaqQwb9Qh2oEQJIPNEPjDrY9yKsvMmIrq_Ooq_=s88-c-k-c0x00ffffff-no-rj"
-        className="size-6 rounded-full"
-      />
-      <span className="font-medium text-sm text-nowrap line-clamp-1 text-ellipsis">
-        JavaScript Mastery
-      </span>
-    </button>
-    <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
-      <img
-        src="https://yt3.ggpht.com/ytc/AIdro_k01-_GpvVZW8w4ULtaQaa55ls8aMf2a5dXhIe56pjMvG0=s88-c-k-c0x00ffffff-no-rj"
-        className="size-6 rounded-full"
-      />
-      <span className="font-medium text-sm text-nowrap line-clamp-1 text-ellipsis">
-        NetworkChuck
-      </span>
-    </button>
-
-    {/* Show All */}
-    <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="#fff"
-        className="size-5"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
-        />
-      </svg>
-      <span className="font-medium text-sm text-nowrap">Show All</span>
-    </button>
   </div>
 );
 
@@ -211,8 +97,24 @@ const MoreActions = () => (
           d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"
         />
       </svg>
-
       <span className="font-medium text-sm text-nowrap">Help</span>
+    </button>
+    <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="#fff"
+        className="size-5"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
+        />
+      </svg>
+      <span className="font-medium text-sm text-nowrap">Backup</span>
     </button>
     <button className="py-1.5 px-3 hover:bg-neutral-800 cursor-pointer duration-300 rounded-lg flex flex-row gap-4 items-center">
       <svg
@@ -234,7 +136,6 @@ const MoreActions = () => (
           d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
         />
       </svg>
-
       <span className="font-medium text-sm text-nowrap">Settings</span>
     </button>
   </div>
@@ -248,7 +149,6 @@ const Sidebar = ({ isSidebarOpen }: Props) => {
       className="fixed top-[50px] left-0 h-[calc(100vh-50px)] origin-left border-r border-neutral-900 bg-[rgba(0,0,0,0.5)] backdrop-blur-xl px-3 z-50 overflow-x-hidden overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-neutral-600 [&::-webkit-scrollbar-thumb]:rounded-full"
     >
       <UserActions />
-      <Subscriptions />
       <MoreActions />
     </motion.aside>
   );
