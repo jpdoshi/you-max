@@ -20,9 +20,10 @@ const VideoTile = ({ videoProps }: any) => {
           />
         </div>
         <div className="flex flex-col gap-0.5">
-          <h3 className="font-semibold text-[15px] leading-snug tracking-normal line-clamp-2 text-ellipsis">
-            {videoProps.title}
-          </h3>
+          <h3
+            dangerouslySetInnerHTML={{ __html: videoProps.title }}
+            className="font-semibold text-[15px] leading-snug tracking-normal line-clamp-2 text-ellipsis"
+          />
           <Link
             to={`/channel/${videoProps.channel.id}`}
             className="text-sm opacity-80 font-medium line-clamp-1 text-ellipsis"
