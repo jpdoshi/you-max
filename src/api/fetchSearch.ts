@@ -16,7 +16,7 @@ export async function fetchSearchVideo(
           q: searchQuery,
           order: "date",
           type: "video",
-          regionCode: "US",
+          videoDuration: "medium",
           safeSearch: "strict",
           videoEmbeddable: "true",
           maxResults,
