@@ -3,7 +3,7 @@ import { ToastContainer } from "react-toastify";
 import { FadeLoader } from "react-spinners";
 import { fetchSearchVideo } from "../api/fetchSearch";
 import { primary } from "../constants/colors";
-import VideoTile from "./VideoTile";
+import VideoCard from "./VideoCard";
 
 const SearchFeed = ({ query = "" }: { query: string }) => {
   const [data, setData] = useState<any[]>([]);
@@ -57,7 +57,7 @@ const SearchFeed = ({ query = "" }: { query: string }) => {
           {!loading &&
             data &&
             data?.map((item, index) => (
-              <VideoTile key={index} videoProps={item} />
+              <VideoCard key={index} videoProps={item} />
             ))}
         </div>
       </main>
