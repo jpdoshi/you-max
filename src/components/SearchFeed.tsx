@@ -11,7 +11,7 @@ const SearchFeed = ({ query = "" }: { query: string }) => {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    fetchSearchVideo("", 25, query)
+    fetchSearchVideo("", 50, query)
       .then((data) => {
         setData(data.videoInfo);
         setLoading(false);

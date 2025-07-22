@@ -3,7 +3,7 @@ import { API_KEY } from "../config";
 
 export async function fetchSearchVideo(
   nextPageToken: string,
-  maxResults = 25,
+  maxResults = 50,
   searchQuery: string
 ): Promise<any> {
   try {
