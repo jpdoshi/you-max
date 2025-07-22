@@ -53,7 +53,7 @@ const SearchFeed = ({ query = "" }: { query: string }) => {
     return (
       <main>
         <ToastContainer />
-        <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-5 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-5">
           {!loading &&
             data &&
             data?.map((item, index) => (
